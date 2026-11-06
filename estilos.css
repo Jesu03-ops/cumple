@@ -1,0 +1,1406 @@
+/* =================================
+   CONFIGURACION GENERAL
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    width: 100%;
+    font-family: 'Georgia', serif;
+
+    background: linear-gradient(
+        135deg,
+        #fff0f5,
+        #ffe0ec,
+        #fff8f0
+    );
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow-x: hidden;
+    padding: 25px 15px;
+}
+
+/* =================================
+   TARJETA DE BIENVENIDA
+================================= */
+
+.bienvenida {
+    width: 100%;
+    max-width: 650px;
+
+    background: rgba(255, 255, 255, 0.85);
+
+    padding: 55px 30px;
+
+    border: 2px solid #eacb9b;
+    border-radius: 30px;
+
+    text-align: center;
+
+    box-shadow: 0 10px 40px rgba(190, 110, 140, 0.15);
+
+    animation: aparecer 1.5s ease;
+}
+
+/* =================================
+   TEXTOS
+================================= */
+
+.subtitulo {
+    color: #bd8a51;
+    font-size: 13px;
+    letter-spacing: 4px;
+    margin-bottom: 25px;
+}
+
+h1 {
+    color: #d77b9f;
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+h2 {
+    color: #b85e83;
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+h3 {
+    color: #c39a59;
+    font-size: 25px;
+    margin-bottom: 25px;
+}
+
+.mensaje {
+    color: #806574;
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.firma {
+    color: #bd8a9d;
+    margin-top: 30px;
+    font-style: italic;
+}
+
+/* =================================
+   BOTON
+================================= */
+
+button {
+    background: linear-gradient(
+        135deg,
+        #e99bb8,
+        #d8759d
+    );
+
+    color: white;
+
+    border: none;
+    border-radius: 50px;
+
+    padding: 16px 30px;
+
+    font-size: 16px;
+    font-family: Georgia, serif;
+
+    cursor: pointer;
+
+    box-shadow: 0 5px 15px rgba(200, 100, 140, 0.25);
+
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(200, 100, 140, 0.35);
+}
+
+/* =================================
+   ANIMACIONES
+================================= */
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =================================
+   ADAPTACION PARA CELULARES
+================================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 15px 10px;
+    }
+
+    .bienvenida {
+        padding: 40px 20px;
+        border-radius: 22px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    h2 {
+        font-size: 42px;
+    }
+
+    h3 {
+        font-size: 22px;
+    }
+
+    .mensaje {
+        font-size: 15px;
+    }
+
+    .subtitulo {
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    button {
+        width: 100%;
+        max-width: 280px;
+        min-height: 50px;
+    }
+}
+/* =================================
+   MARIPOSAS FLOTANTES
+================================= */
+
+.mariposas {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.mariposas span {
+    position: absolute;
+    display: block;
+    font-size: 30px;
+    animation: volar 12s linear infinite;
+    opacity: 0;
+}
+
+/* Posicion de cada mariposa */
+
+.mariposas span:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.mariposas span:nth-child(2) {
+    left: 80%;
+    animation-delay: 3s;
+}
+
+.mariposas span:nth-child(3) {
+    left: 45%;
+    animation-delay: 6s;
+}
+
+.mariposas span:nth-child(4) {
+    left: 65%;
+    animation-delay: 9s;
+}
+
+.mariposas span:nth-child(5) {
+    left: 25%;
+    animation-delay: 2s;
+}
+
+.mariposas span:nth-child(6) {
+    left: 90%;
+    animation-delay: 5s;
+}
+
+/* Movimiento */
+
+@keyframes volar {
+    0% {
+        top: 105%;
+        opacity: 0;
+        transform: translateX(0) rotate(0deg);
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateX(45px) rotate(20deg);
+    }
+
+    85% {
+        opacity: 1;
+    }
+
+    100% {
+        top: -10%;
+        opacity: 0;
+        transform: translateX(-40px) rotate(-20deg);
+    }
+}
+
+/* Adaptacion para celulares */
+
+@media (max-width: 600px) {
+    .mariposas span {
+        font-size: 23px;
+    }
+}
+/* =================================
+   FLORES DECORATIVAS
+================================= */
+
+.flores {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.flores span {
+    position: absolute;
+    font-size: 38px;
+    animation: balanceo 4s ease-in-out infinite;
+}
+
+.flores span:nth-child(1) {
+    top: 5%;
+    left: 5%;
+}
+
+.flores span:nth-child(2) {
+    top: 15%;
+    right: 7%;
+    animation-delay: 1s;
+}
+
+.flores span:nth-child(3) {
+    bottom: 8%;
+    left: 6%;
+    animation-delay: 2s;
+}
+
+.flores span:nth-child(4) {
+    bottom: 15%;
+    right: 5%;
+    animation-delay: 3s;
+}
+
+.flores span:nth-child(5) {
+    top: 50%;
+    right: 2%;
+    animation-delay: 1.5s;
+}
+
+@keyframes balanceo {
+    0%, 100% {
+        transform: translateY(0) rotate(-8deg);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(8deg);
+    }
+}
+
+/* =================================
+   DESTELLOS DORADOS
+================================= */
+
+.destellos {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.destellos span {
+    position: absolute;
+    color: #d9ae62;
+    font-size: 25px;
+    animation: brillar 3s ease-in-out infinite;
+}
+
+.destellos span:nth-child(1) {
+    top: 20%;
+    left: 15%;
+}
+
+.destellos span:nth-child(2) {
+    top: 70%;
+    left: 85%;
+    animation-delay: 1s;
+}
+
+.destellos span:nth-child(3) {
+    top: 85%;
+    left: 30%;
+    animation-delay: 2s;
+}
+
+.destellos span:nth-child(4) {
+    top: 35%;
+    right: 15%;
+    animation-delay: 1.5s;
+}
+
+.destellos span:nth-child(5) {
+    top: 10%;
+    left: 70%;
+    animation-delay: 0.5s;
+}
+
+@keyframes brillar {
+    0%, 100% {
+        opacity: 0.3;
+        transform: scale(0.7);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.3);
+    }
+}
+/* =================================
+   SEGUNDA PANTALLA: ALBUM
+================================= */
+
+.album {
+    display: none;
+    width: 100%;
+    max-width: 850px;
+    margin: auto;
+    padding: 40px 20px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.92);
+    border: 2px solid #eacb9b;
+    border-radius: 25px;
+    box-shadow: 0 10px 40px rgba(190, 110, 140, 0.15);
+    animation: aparecer 1s ease;
+}
+
+.album h2 {
+    font-size: 35px;
+    color: #c76c91;
+    margin: 20px 0;
+}
+
+.descripcion-album {
+    color: #806574;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+    max-width: 650px;
+    margin: auto;
+}
+
+.foto {
+    background: white;
+    padding: 12px 12px 20px;
+    border: 1px solid #eed8bd;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(150, 100, 120, 0.15);
+    transition: transform 0.3s ease;
+    animation: aparecerTarjeta 0.8s ease both;
+}
+
+.foto:hover {
+    transform: translateY(-8px) rotate(-2deg);
+    box-shadow: 0 10px 25px rgba(150, 100, 120, 0.22);
+}
+
+.foto:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.foto:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.foto:nth-child(3) {
+    animation-delay: 0.8s;
+}
+
+.foto:nth-child(4) {
+    animation-delay: 1.1s;
+}
+
+.espacio-foto {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background: linear-gradient(135deg, #ffe5ef, #fff5e8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 45px;
+    border-radius: 5px;
+    margin-bottom: 12px;
+}
+
+.espacio-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 5px;
+    transition: transform 0.4s ease;
+}
+
+.foto:hover .espacio-foto img {
+    transform: scale(1.05);
+}
+
+.foto p {
+    color: #bd7894;
+    font-size: 14px;
+}
+
+.mensaje-final-album {
+    color: #b88b55;
+    margin-top: 35px;
+    font-style: italic;
+}
+
+/* ADAPTACION PARA CELULARES */
+
+@media (max-width: 600px) {
+
+    .album {
+        padding: 30px 12px;
+    }
+
+    .album h2 {
+        font-size: 27px;
+    }
+
+    .galeria {
+        gap: 12px;
+    }
+
+    .foto {
+        padding: 7px 7px 14px;
+    }
+
+    .foto p {
+        font-size: 12px;
+    }
+
+    .espacio-foto {
+        font-size: 32px;
+    }
+}
+/* =================================
+   TERCERA PANTALLA: CARTA
+================================= */
+
+.carta {
+    display: none;
+    width: 100%;
+    max-width: 750px;
+    margin: 40px auto;
+    padding: 40px 25px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid #eacb9b;
+    border-radius: 25px;
+    box-shadow: 0 10px 40px rgba(190, 110, 140, 0.15);
+    animation: aparecer 1s ease;
+}
+
+.carta h2 {
+    color: #c76c91;
+    font-size: 32px;
+    margin: 20px 0;
+}
+
+.descripcion-carta {
+    color: #806574;
+    margin-bottom: 25px;
+    line-height: 1.7;
+}
+
+#abrirCarta {
+    background: linear-gradient(135deg, #e99ab7, #d978a0);
+    color: white;
+    border: 2px solid #f5c6d7;
+    padding: 16px 32px;
+    border-radius: 18px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(201, 108, 145, 0.25);
+    transition: all 0.3s ease;
+}
+
+#abrirCarta:hover {
+    transform: translateY(-4px) scale(1.04);
+    box-shadow: 0 10px 25px rgba(201, 108, 145, 0.35);
+}
+
+.contenido-carta {
+    display: none;
+    max-width: 550px;
+    margin: 30px auto 0;
+    padding: 35px;
+    background: linear-gradient(145deg, #fffaf7, #fff0f5);
+    border: 2px solid #f0d3bd;
+    border-radius: 18px;
+    text-align: left;
+    line-height: 1.9;
+    color: #765c68;
+    box-shadow: 0 8px 25px rgba(190, 110, 140, 0.12);
+    animation: aparecer 1s ease;
+}
+
+.contenido-carta h3 {
+    color: #c76c91;
+    margin-bottom: 20px;
+}
+
+.contenido-carta p {
+    margin-bottom: 18px;
+}
+
+.firma-carta {
+    text-align: right;
+    color: #c76c91;
+    font-style: italic;
+}
+
+/* BOTON PARA CONTINUAR AL PASTEL */
+
+#irPastel {
+    display: none;
+    background: linear-gradient(135deg, #e99ab7, #d978a0);
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: transform 0.3s ease;
+}
+
+#irPastel:hover {
+    transform: scale(1.05);
+}
+
+/* ADAPTACION PARA CELULARES */
+
+@media (max-width: 600px) {
+
+    .carta {
+        padding: 30px 15px;
+    }
+
+    .carta h2 {
+        font-size: 26px;
+    }
+
+    .contenido-carta {
+        padding: 20px 16px;
+        font-size: 14px;
+        position: relative;
+overflow: hidden;
+    }
+
+    #abrirCarta {
+        width: 100%;
+        max-width: 250px;
+    }
+}
+/* =================================
+   CUARTA PANTALLA: PASTEL
+================================= */
+
+.pastel {
+    display: none;
+    width: 100%;
+    max-width: 750px;
+    margin: 40px auto;
+    padding: 40px 20px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid #eacb9b;
+    border-radius: 25px;
+    box-shadow: 0 10px 40px rgba(190, 110, 140, 0.15);
+    animation: entradaPastel 1.2s ease both;
+}
+
+.pastel h2 {
+    color: #c76c91;
+    font-size: 30px;
+    margin: 20px 0;
+}
+
+.descripcion-pastel {
+    color: #806574;
+    margin-bottom: 25px;
+}
+
+.escenario-pastel {
+    width: 100%;
+    max-width: 400px;
+    margin: 50px auto 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding-top: 50px;
+    isolation: isolate;
+}
+
+.escenario-pastel::before {
+    content: "";
+    position: absolute;
+    width: 110%;
+    height: 110%;
+    top: 0;
+    left: -5%;
+    background: radial-gradient(
+        ellipse,
+        rgba(255, 170, 205, 0.75),
+        rgba(255, 210, 150, 0.4),
+        transparent 72%
+    );
+    filter: blur(32px);
+    z-index: -1;
+    animation: brilloPastel 2.5s ease-in-out infinite alternate;
+}
+
+/* PISOS DEL PASTEL */
+
+.pastel-piso {
+    position: relative;
+    border-radius: 12px 12px 18px 18px;
+    border-bottom: 7px solid #e7a9bb;
+    box-shadow: 0 7px 12px rgba(150, 90, 110, 0.12);
+}
+
+.piso-superior {
+    width: 45%;
+    height: 65px;
+    background: linear-gradient(#fff4f7, #f6c9d8);
+    z-index: 1;
+}
+
+.piso-medio {
+    width: 68%;
+    height: 75px;
+    margin-top: -3px;
+    background: linear-gradient(#ffeaf1, #eeb1c6);
+    z-index: 2;
+}
+
+.piso-inferior {
+    width: 90%;
+    height: 85px;
+    margin-top: -3px;
+    background: linear-gradient(#fff0f4, #e8a4bc);
+    z-index: 3;
+}
+
+/* VELITAS */
+
+.velas {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    gap: 2px;
+    padding: 0 10px;
+    z-index: 5;
+}
+
+.vela {
+    width: 5px;
+    height: 32px;
+    flex-shrink: 0;
+    border-radius: 4px 4px 0 0;
+
+    background: repeating-linear-gradient(
+        45deg,
+        #ffffff,
+        #ffffff 4px,
+        #e9a2ba 4px,
+        #e9a2ba 8px
+    );
+
+    position: relative;
+}
+
+.llama {
+    position: absolute;
+    width: 9px;
+    height: 13px;
+    background: linear-gradient(to top, #ff8c42, #ffc85c, #fff2b0);
+    border-radius: 50% 50% 50% 50%;
+    top: -14px;
+    left: -1px;
+    box-shadow: 0 0 10px #ffca66, 0 0 18px rgba(255, 180, 70, 0.5);
+    transform-origin: bottom center;
+    animation: llama 0.6s infinite alternate ease-in-out;
+}
+
+@keyframes llama {
+    0% {
+        transform: scale(0.85) rotate(-8deg);
+        opacity: 0.85;
+    }
+
+    50% {
+        transform: scale(1.1) rotate(3deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(0.95) rotate(8deg);
+        opacity: 0.9;
+    }
+}
+
+/* BOTON DE CELEBRACION */
+
+#celebrar {
+    background: linear-gradient(135deg, #e99ab7, #d978a0);
+    color: white;
+    border: none;
+    padding: 15px 28px;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+#celebrar:hover {
+    transform: scale(1.05);
+}
+
+#mensajeCelebracion {
+    display: none;
+    margin-top: 25px;
+    color: #c76c91;
+    font-size: 23px;
+    font-weight: bold;
+    animation: aparecer 1s ease;
+}
+
+/* ADAPTACION PARA CELULARES */
+
+@media (max-width: 600px) {
+    
+    .velas {
+    padding: 0 6px;
+    gap: 1px;
+}
+
+.vela {
+    width: 4px;
+    height: 28px;
+}
+
+    .pastel {
+        padding: 30px 12px;
+    }
+
+    .pastel h2 {
+        font-size: 24px;
+    }
+
+    .escenario-pastel {
+        max-width: 320px;
+    }
+
+    .vela {
+        width: 5px;
+    }
+
+    .velas {
+        gap: 2px;
+    }
+
+    #mensajeCelebracion {
+        font-size: 19px;
+    }
+}
+/* =================================
+   CONFETI DE CUMPLEAÑOS
+================================= */
+
+#contenedorConfeti {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 100;
+}
+
+.confeti {
+    position: absolute;
+    top: -20px;
+    width: 9px;
+    height: 14px;
+    opacity: 0;
+    border-radius: 2px;
+    animation: caerConfeti 4s linear forwards;
+}
+
+@keyframes caerConfeti {
+
+    0% {
+        transform: translateY(-20px) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+    }
+
+}
+@keyframes aparecerTarjeta {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes revelarCarta {
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+.decoracion-carta {
+    position: absolute;
+    font-size: 28px;
+    opacity: 0.75;
+    pointer-events: none;
+}
+
+.decoracion-superior {
+    top: 10px;
+    right: 15px;
+    transform: rotate(15deg);
+}
+
+.decoracion-inferior {
+    bottom: 10px;
+    left: 15px;
+    transform: rotate(-15deg);
+}
+.nota-carta {
+    margin-top: 30px;
+    padding: 15px 20px;
+    background: #fff0f5;
+    border-left: 4px solid #d978a0;
+    border-radius: 10px;
+    color: #98647a;
+    font-size: 14px;
+    line-height: 1.7;
+    text-align: left;
+}
+
+.nota-carta strong {
+    color: #c76c91;
+    font-size: 15px;
+}
+@keyframes entradaPastel {
+    0% {
+        opacity: 0;
+        transform: translateY(35px) scale(0.92);
+    }
+
+    60% {
+        opacity: 1;
+        transform: translateY(-5px) scale(1.02);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+@keyframes brilloPastel {
+    from {
+        opacity: 0.5;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+}
+.destello {
+    position: absolute;
+    color: #eacb9b;
+    font-size: 24px;
+    text-shadow: 0 0 10px #f5c6d7, 0 0 18px #eacb9b;
+    pointer-events: none;
+    animation: destellar 1.8s ease-in-out infinite alternate;
+}
+
+.destello-1 {
+    top: 15%;
+    left: 8%;
+}
+
+.destello-2 {
+    top: 30%;
+    right: 5%;
+    animation-delay: 0.4s;
+}
+
+.destello-3 {
+    top: 55%;
+    left: 2%;
+    animation-delay: 0.8s;
+}
+
+.destello-4 {
+    top: 65%;
+    right: 3%;
+    animation-delay: 0.2s;
+}
+
+.destello-5 {
+    top: 5%;
+    right: 25%;
+    animation-delay: 1s;
+}
+
+.destello-6 {
+    top: 45%;
+    left: 90%;
+    animation-delay: 0.6s;
+}
+
+@keyframes destellar {
+    from {
+        opacity: 0.25;
+        transform: scale(0.7) rotate(0deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.3) rotate(25deg);
+    }
+}
+/* =================================
+   QUINTA PANTALLA: JUEGO
+================================= */
+
+#juego {
+    display: none;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.contenedor-juego {
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid #eacb9b;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+}
+
+.contenedor-juego h2 {
+    color: #d978a0;
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.contenedor-juego p {
+    color: #76566a;
+    font-size: 16px;
+}
+
+.marcador-juego {
+    display: flex;
+    justify-content: space-around;
+    gap: 15px;
+    margin: 25px 0;
+    color: #bd648b;
+    font-size: 19px;
+}
+
+.zona-juego {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #fff0f5, #ffe1eb);
+    border: 2px solid #f3b6cc;
+    border-radius: 15px;
+    margin-bottom: 25px;
+}
+
+#mensajeJuego {
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    text-align: center;
+    color: #c66d91;
+    font-size: 18px;
+}
+
+#iniciarJuego {
+    padding: 13px 25px;
+    background: #d978a0;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#iniciarJuego:hover {
+    background: #bd5c87;
+    transform: scale(1.05);
+}
+/* =================================
+   SEXTA PANTALLA: VICTORIA
+================================= */
+
+#victoria {
+    display: none;
+    padding: 50px 20px;
+    text-align: center;
+    min-height: 80vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor-victoria {
+    max-width: 750px;
+    margin: 40px auto;
+    padding: 45px 25px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid #eacb9b;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+}
+
+.contenedor-victoria h1 {
+    color: #d978a0;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.contenedor-victoria p {
+    color: #76566a;
+    font-size: 18px;
+    margin: 15px 0;
+}
+
+#irPantallaFinal {
+    margin-top: 25px;
+    padding: 14px 25px;
+    background: #d978a0;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#irPantallaFinal:hover {
+    background: #bd5c87;
+    transform: scale(1.05);
+}
+/* =================================
+   SÉPTIMA PANTALLA: FINAL
+================================= */
+
+#pantallaFinal {
+    display: none;
+    padding: 50px 20px;
+    min-height: 80vh;
+    text-align: center;
+}
+
+.contenedor-final {
+    max-width: 750px;
+    margin: 40px auto;
+    padding: 45px 25px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid #eacb9b;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+}
+
+.contenedor-final h1,
+.contenedor-final h2 {
+    color: #d978a0;
+    margin-bottom: 20px;
+}
+
+.contenedor-final p {
+    color: #76566a;
+    font-size: 18px;
+    line-height: 1.7;
+    margin: 20px 0;
+}
+
+#volverInicio {
+    margin-top: 25px;
+    padding: 14px 25px;
+    background: #d978a0;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#volverInicio:hover {
+    background: #bd5c87;
+    transform: scale(1.05);
+}
+/* =================================
+   REGALO DE CUMPLEAÑOS
+================================= */
+
+.regalo {
+    position: relative;
+    width: 180px;
+    height: 170px;
+    margin: 70px auto 35px;
+}
+
+/* Caja */
+
+.caja-regalo {
+    position: absolute;
+    bottom: 0;
+    width: 180px;
+    height: 115px;
+    background: #f28bb5;
+    border-radius: 5px;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+}
+
+/* Cinta vertical */
+
+.cinta-regalo {
+    position: absolute;
+    left: 70px;
+    width: 40px;
+    height: 100%;
+    background: #fff0f5;
+}
+
+/* Tapa */
+
+.tapa-regalo {
+    position: absolute;
+    top: 20px;
+    left: -10px;
+    width: 200px;
+    height: 35px;
+    background: #d978a0;
+    border-radius: 6px;
+    z-index: 2;
+}
+
+/* Moño */
+
+.lazo-regalo {
+    position: absolute;
+    width: 55px;
+    height: 30px;
+    background: #fff0f5;
+    border-radius: 50%;
+    top: -23px;
+    left: 72px;
+    transform: rotate(-10deg);
+}
+/* ANIMACIÓN DE APERTURA */
+
+.tapa-regalo {
+    transform-origin: left bottom;
+    transition: transform 1s ease;
+}
+
+.regalo.abierto .tapa-regalo {
+    transform: translate(-25px, -100px) rotate(-35deg);
+}
+
+.caja-regalo {
+    transition: transform 0.8s ease;
+}
+
+.regalo.abierto .caja-regalo {
+    transform: translateY(10px);
+}
+/* MENSAJE QUE SALE DEL REGALO */
+
+#mensajeRegalo {
+    margin-top: 35px;
+    animation: salirDelRegalo 1.5s ease forwards;
+}
+
+@keyframes salirDelRegalo {
+    0% {
+        opacity: 0;
+        transform: translateY(-60px) scale(0.5);
+    }
+
+    60% {
+        opacity: 1;
+        transform: translateY(15px) scale(1.05);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+/* CARTA FINAL DE CUMPLEAÑOS */
+
+#mensajeRegalo {
+    max-width: 600px;
+    margin: 35px auto 0;
+    padding: 30px 25px;
+    background: linear-gradient(145deg, #fffafd, #fff0f5);
+    border: 2px solid #eacb9b;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(217, 120, 160, 0.2);
+}
+
+#mensajeRegalo h2 {
+    color: #d978a0;
+    margin-bottom: 18px;
+}
+
+#mensajeRegalo p {
+    color: #76566a;
+    font-size: 18px;
+    line-height: 1.8;
+}
+/* =================================
+   DESTELLOS MÁGICOS DEL REGALO
+================================= */
+
+.destello-regalo {
+    position: absolute;
+    bottom: 90px;
+    left: 50%;
+    font-size: 25px;
+    pointer-events: none;
+    z-index: 5;
+    animation: explotarRegalo 1.8s ease-out forwards;
+}
+
+@keyframes explotarRegalo {
+    0% {
+        opacity: 0;
+        transform: translate(0, 0) scale(0.3);
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(var(--movimiento-x), -160px) scale(1.4) rotate(35deg);
+    }
+}
+/* BRILLO DEL REGALO CERRADO */
+
+.regalo:not(.abierto) .caja-regalo {
+    animation: brilloRegalo 2s ease-in-out infinite alternate;
+}
+
+@keyframes brilloRegalo {
+    from {
+        filter: drop-shadow(0 0 3px #f7a8c9);
+    }
+
+    to {
+        filter: drop-shadow(0 0 18px #ff8fbd);
+    }
+}
+/* RESPLANDOR ALREDEDOR DEL REGALO */
+
+/* RESPLANDOR ROSA DEL REGALO */
+
+.regalo:not(.abierto)::before {
+    content: "";
+    position: absolute;
+    width: 220px;
+    height: 190px;
+    left: -20px;
+    top: 0;
+    border-radius: 50%;
+    background: rgba(255, 70, 160, 0.55);
+    filter: blur(35px);
+    z-index: 0;
+    animation: resplandorExterior 1.5s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+
+@keyframes resplandorExterior {
+    from {
+        opacity: 0.3;
+        transform: scale(0.85);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.15);
+    }
+}
